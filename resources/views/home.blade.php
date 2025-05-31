@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="center-section d-flex flex-column align-items-center">
+<section class="center-section d-flex flex-column align-items-center position-relative">
     <div class="container d-flex align-items-center justify-content-center position-relative" style="max-width: 900px;">
         <!-- Arrow on the left side -->
-        <img src="{{ asset('images/seta.png') }}" alt="Arrow" class="arrow-indicator me-3">
+        <img src="{{ asset('images/seta.png') }}" alt="Arrow" class="arrow-indicator position-absolute">
 
-        <div class="text-and-search flex-grow-1">
+        <div class="text-and-search text-center mx-auto" style="max-width: 600px; position: relative; z-index: 2;">
             <!-- Large heading -->
             <h1 class="center-title fw-bold mb-3">
                 Discover Furniture With<br>High Quality Wood ✨
@@ -31,8 +31,8 @@
         </div>
     </div>
 
-    <!-- Main image below, search box touching top -->
-    <div class="main-image-container mt-3">
+    <!-- Main image below, search box layered above top -->
+    <div class="main-image-container w-100 position-relative" style="margin-top: -30px; z-index: 1;">
         <img src="{{ asset('images/center.png') }}" alt="High Quality Furniture" class="center-image img-fluid rounded">
     </div>
 </section>
