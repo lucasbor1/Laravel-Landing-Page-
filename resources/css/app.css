@@ -606,35 +606,37 @@ body {
 .our-product .product-label {
   color: #F58A07;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
   display: block;
-  margin-bottom: 1rem;
 }
 
 .our-product .section-title {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 700;
   color: #1E1E1E;
-  line-height: 1.2;
+  line-height: 1.1;
   margin-bottom: 2rem;
+  max-width: 500px;
 }
 
 .our-product .section-description {
   color: #666;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 2rem;
-  max-width: 90%;
+  max-width: 80%;
 }
 
 .btn-learn-more {
   background-color: #518581;
   color: white;
-  padding: 0.875rem 2rem;
+  padding: 1rem 2.5rem;
   font-weight: 600;
   border: none;
   border-radius: 0.25rem;
-  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  margin-bottom: 2rem;
 }
 
 .btn-learn-more:hover {
@@ -642,11 +644,27 @@ body {
   color: white;
 }
 
+/* Imagem da madeira */
+.wood-image-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.wood-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Estatísticas */
 .stats-row {
   display: flex;
-  gap: 3rem;
-  margin-top: 4rem;
+  justify-content: space-between;
+  gap: 4rem;
+  margin-bottom: 3rem;
 }
 
 .stat-item {
@@ -654,42 +672,27 @@ body {
 }
 
 .stat-number {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 700;
   color: #1E1E1E;
   margin-bottom: 0.5rem;
 }
 
 .stat-label {
-  color: #666;
+  color: #667085;
   font-size: 1rem;
   margin: 0;
 }
 
-/* Galeria de imagens */
-.image-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  height: 100%;
-}
-
-.horizontal-image {
-  grid-column: 1;
-  height: 300px;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.vertical-image {
-  grid-column: 2;
+/* Imagem do living room */
+.living-room-container {
+  width: 100%;
   height: 600px;
   overflow: hidden;
   border-radius: 8px;
 }
 
-.horizontal-image img,
-.vertical-image img {
+.living-room-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -698,56 +701,66 @@ body {
 /* Responsividade */
 @media (max-width: 1200px) {
   .our-product .section-title {
-      font-size: 3rem;
+      font-size: 3.5rem;
+  }
+  
+  .living-room-container {
+      height: 500px;
   }
 }
 
 @media (max-width: 992px) {
   .our-product .section-title {
+      font-size: 3rem;
+  }
+  
+  .stats-row {
+      gap: 2rem;
+  }
+  
+  .stat-number {
       font-size: 2.5rem;
   }
   
-  .horizontal-image {
-      height: 250px;
+  .wood-image-container {
+      height: 200px;
   }
   
-  .vertical-image {
-      height: 500px;
+  .living-room-container {
+      height: 450px;
   }
 }
 
 @media (max-width: 768px) {
   .our-product .section-title {
-      font-size: 2rem;
+      font-size: 2.5rem;
+      max-width: 100%;
   }
   
   .stats-row {
       flex-direction: column;
       gap: 2rem;
-  }
-  
-  .image-gallery {
       margin-top: 3rem;
-      grid-template-columns: 1fr;
   }
   
-  .horizontal-image,
-  .vertical-image {
-      grid-column: 1;
+  .wood-image-container,
+  .living-room-container {
       height: 300px;
+      margin-top: 2rem;
   }
 }
 
 @media (max-width: 576px) {
   .our-product .section-title {
-      font-size: 1.75rem;
-  }
-  
-  .section-description {
-      font-size: 1rem;
+      font-size: 2rem;
   }
   
   .stat-number {
       font-size: 2rem;
+  }
+  
+  .wood-image-container,
+  .living-room-container {
+      height: 250px;
   }
 }

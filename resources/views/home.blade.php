@@ -114,7 +114,7 @@
 <section class="our-product py-5">
     <div class="container products-container">
         <div class="row">
-            <div class="col-lg-6 pe-lg-5">
+            <div class="col-lg-6">
                 <span class="product-label">Our Product</span>
                 <h2 class="section-title mt-2">
                     Crafted by<br>
@@ -126,9 +126,14 @@
                 <p class="section-description mb-4">
                     Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non purus parturient. morbi fermentum, vivamus et accumsan dui tincidunt pulvinar
                 </p>
-                <button class="btn btn-learn-more">Learn More</button>
-
-                <div class="stats-row mt-5">
+                <button class="btn btn-learn-more mb-4">Learn More</button>
+                
+                <div class="wood-image-container">
+                    <img src="{{ asset('images/madeira.png') }}" alt="madeira" class="wood-image">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                                <div class="stats-row mb-4">
                     <div class="stat-item">
                         <h3 class="stat-number">20+</h3>
                         <p class="stat-label">Years Experience</p>
@@ -142,15 +147,8 @@
                         <p class="stat-label">Project Finished</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="image-gallery">
-                    <div class="horizontal-image">
-                        <img src="{{ asset('images/madeira.png') }}" alt="madeira">
-                    </div>
-                    <div class="vertical-image">
-                        <img src="{{ asset('images/living-room.jpg') }}" alt="Móvel">
-                    </div>
+                <div class="living-room-container">
+                    <img src="{{ asset('images/living-room.jpg') }}" alt="Móvel" class="living-room-image">
                 </div>
             </div>
         </div>
