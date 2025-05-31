@@ -1,35 +1,223 @@
 /* Importações */
 @import 'bootstrap';
+@import 'bootstrap-icons';
 
 /* Estilos personalizados */
-.hero {
-    padding: 5rem 0;
+/* ==================== HERO SECTION ==================== */
+.center-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f8f9fa; /* Cor de fallback */
 }
 
-.section-header {
-    max-width: 600px;
-    margin: 0 auto;
+.center-container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.center-content {
+    position: relative;
+    z-index: 2;
+    width: 40%;
+    padding: 2rem;
+}
+
+.center-image-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 65%;
+    height: 100%;
+}
+
+.center-image {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.search-box {
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-box .input-group {
+    height: 60px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-box .form-control {
+    height: 100%;
+  
+    border-right: none;
+    border-radius: 0;
+    padding: 0 20px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.search-box .btn {
+    height: 100%;
+    background-color: #518581;
+    border: #518581;
+    color: white;
+    font-weight: 600;
+    border-radius: 0;
+    padding: 0 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.search-box .btn:hover {
+    background-color: #8FB996;    
+}
+
+.center-title {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.center-text {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+/* ==================== BENEFITS SECTION ==================== */
+.benefits {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+}
+
+.benefits .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 0;
+    height: 100%;
+}
+
+.benefits .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
 .icon-box {
     width: 80px;
     height: 80px;
-    margin: 0 auto;
+    margin: 0 auto 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f8f9fa;
+    background-color: #fff;
     border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .hero {
-        text-align: center;
-        padding: 3rem 0;
+/* ==================== PRODUCTS SECTION ==================== */
+.products {
+    padding: 5rem 0;
+}
+
+.products .card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.products .card-img-top {
+    transition: transform 0.5s ease;
+    height: 250px;
+    object-fit: cover;
+}
+
+.products .card:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.products .card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* ==================== TESTIMONIALS SECTION ==================== */
+.testimonials {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+}
+
+.testimonials .card {
+    border: none;
+    background-color: #fff;
+    border-radius: 0;
+    padding: 2rem;
+    height: 100%;
+}
+
+/* ==================== RESPONSIVIDADE ==================== */
+@media (max-width: 1200px) {
+    .center-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .center-section {
+        height: auto;
+        min-height: 100vh;
     }
     
-    .hero img {
-        margin-top: 2rem;
+    .center-content {
+        width: 100%;
+        padding: 4rem 2rem;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .center-image-container {
+        width: 100%;
+        opacity: 0.3;
+    }
+    
+    .search-box {
+        margin: 0 auto 2rem;
+    }
+    
+    .center-title, .center-text {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .center-title {
+        font-size: 2.5rem;
+    }
+    
+    .center-text {
+        font-size: 1rem;
+    }
+    
+    .search-box .form-control,
+    .search-box .btn {
+        height: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .center-title {
+        font-size: 2rem;
+    }
+    
+    .search-box {
+        max-width: 100%;
     }
 }

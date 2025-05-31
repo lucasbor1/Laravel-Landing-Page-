@@ -3,11 +3,12 @@
         <div class="card-body p-4">
             <div class="d-flex align-items-center mb-3">
                 <div class="me-3">
-                    <img src="{{ asset($testimonial['image'] ?? 'images/default-avatar.jpg') }}"
+                    <img src="{{ asset($testimonial['image']) }}"
                          class="rounded-circle"
-                         width="50"
-                         height="50"
-                         alt="{{ $testimonial['name'] }}">
+                         width="60"
+                         height="60"
+                         alt="{{ $testimonial['name'] }}"
+                         style="object-fit: cover;">
                 </div>
                 <div>
                     <h5 class="mb-0">{{ $testimonial['name'] }}</h5>

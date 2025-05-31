@@ -1,6 +1,9 @@
 <nav class="navbar navbar-expand-lg bg-white py-3">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="#">Lalasia</a>
+        <a class="navbar-brand fw-bold" href="#">
+            <img src="{{ asset('images/Icone.png') }}" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+            Lalasia
+        </a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
