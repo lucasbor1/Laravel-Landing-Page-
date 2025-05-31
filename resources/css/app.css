@@ -919,3 +919,147 @@ body {
       height: 250px;
   }
 }
+
+/* ==================== ARTICLES SECTION ==================== */
+.articles {
+  padding: 5rem 0;
+  background-color: white;
+}
+
+.articles-container {
+  max-width: 1522px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.articles-label {
+  color: #F58A07;
+  font-weight: 500;
+  font-size: 1.25rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.featured-article {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.regular-articles {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.article-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.article-image-container {
+  position: relative;
+  padding-top: 60%;
+  overflow: hidden;
+}
+
+.article-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-category {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.article-content {
+  padding: 1.5rem;
+}
+
+.article-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1E1E1E;
+}
+
+.article-description {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.article-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  font-weight: 500;
+  color: #1E1E1E;
+}
+
+.article-date {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.read-more {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .articles-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .featured-article,
+  .regular-articles {
+      grid-column: 1;
+  }
+}
+
+@media (max-width: 576px) {
+  .article-title {
+      font-size: 1.25rem;
+  }
+}

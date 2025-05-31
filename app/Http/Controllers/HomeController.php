@@ -98,6 +98,24 @@ class HomeController extends Controller
             ];
         }
 
-        return view('home', compact('products', 'testimonials'));
+        $articles = [];
+        for ($i = 0; $i < 4; $i++) {
+            $authorName = $faker->name;
+            $articles[] = [
+                'category' => $faker->randomElement(['Tips and Trick', 'Design Inspiration']),
+                'title' => $faker->sentence(6),
+                'description' => $faker->paragraph(1),
+                'image' => 'https://picsum.photos/seed/article' . $i . '/600/400',
+                'author' => [
+                    'name' => $authorName,
+                    'avatar' => 'https://ui-avatars.com/api/?name=' . urlencode($authorName) . '&background=random&color=fff&size=60',
+                    'date' => $faker->date('l, j F Y'),
+                ],
+                'featured' => $i === 0,
+            ];
+        }
+
+        return view('home', compact('products', 'testimonials', 'articles'));
+
     }
 }

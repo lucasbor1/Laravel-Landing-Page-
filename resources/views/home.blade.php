@@ -181,4 +181,43 @@
             </div>
         </div>
     </section>
+
+    <!-- Articles Section -->
+<section class="articles py-5">
+    <div class="container articles-container">
+        <span class="articles-label">Articles</span>
+        <h2 class="section-title">The best furniture comes from Lalasia</h2>
+        <p class="section-subtitle">Pellentesque etiam blandit in tincidunt at donec.</p>
+
+        <div class="articles-grid">
+            <!-- Featured Article -->
+            @foreach($articles as $article)
+                @if($article['featured'] ?? false)
+                    <div class="featured-article">
+                        <x-article-card :article="$article" :featured="true" />
+                    </div>
+                @endif
+            @endforeach
+
+            <!-- Regular Articles -->
+            <div class="regular-articles">
+                @foreach($articles as $article)
+                    @unless($article['featured'] ?? false)
+                        <x-article-card :article="$article" />
+                    @endunless
+                @endforeach
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <div class="articles-navigation">
+            <button class="nav-arrow prev">
+                <i class="bi bi-arrow-left"></i>
+            </button>
+            <button class="nav-arrow next">
+                <i class="bi bi-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</section>
 @endsection
