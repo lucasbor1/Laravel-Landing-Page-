@@ -188,7 +188,7 @@
         <div class="articles-header">
             <span class="articles-label">Articles</span>
             <h2 class="section-title">The best furniture comes from Lalasia</h2>
-            <p class="section-subtitle">Pellentesque etiam blandit in tincidunt at donec.</p>
+            <p class="product-description">Pellentesque etiam blandit in tincidunt at donec.</p>
         </div>
 
         <div class="articles-grid">

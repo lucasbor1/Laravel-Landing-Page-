@@ -1,6 +1,7 @@
 /* ==================== IMPORTAÇÕES ==================== */
 @import 'bootstrap';
 @import 'bootstrap-icons';
+@import url('https://fonts.cdnfonts.com/css/eudoxus-sans');
 
 /* ==================== VARIÁVEIS E GERAIS ==================== */
 body {
@@ -343,7 +344,8 @@ body {
 }
 
 .product-description {
-  color: #AFADB5;
+  font-family: 'Eudoxus Sans', sans-serif;
+  color: #666;
   font-size: 1.125rem;
   line-height: 1.5;
   margin-bottom: 1rem;
@@ -776,6 +778,7 @@ body {
 }
 
 .our-product .section-description {
+  font-family: 'Eudoxus Sans', sans-serif;
   color: #666;
   font-size: 1rem;
   line-height: 1.6;
@@ -1020,6 +1023,7 @@ body {
 }
 
 .featured-article .article-description {
+  font-family: 'Eudoxus Sans', sans-serif;
   font-size: 1.1rem;
   line-height: 1.6;
   color: rgba(255,255,255,0.9);
@@ -1104,6 +1108,7 @@ body {
 }
 
 .small-article .article-description {
+  font-family: 'Eudoxus Sans', sans-serif;
   font-size: 0.875rem;
   color: #666;
   margin-bottom: 1rem;
