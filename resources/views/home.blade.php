@@ -79,30 +79,24 @@
 
 <!-- Products Section -->
 <section class="products py-5">
-    <div class="container products-container">
-        <div class="section-header mb-5 product-header text-center">
-            <span class="product-label">Product</span>
-            <h2 class="section-title mt-2">Our popular product</h2>
-            <p class="section-subtitle">
-                Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non purus parturient.
-            </p>
-        </div>
-        
-        <div class="position-relative">
-            <button class="slider-arrow prev" aria-label="Previous">
-                <i class="bi bi-chevron-left"></i>
-            </button>
-            
-            <div class="row">
+    <div class="position-relative">
+        <button class="carousel-btn left" id="carouselPrev">
+            <i class="bi bi-chevron-left"></i>
+        </button>
+    
+        <div class="product-carousel-wrapper">
+            <div class="product-carousel-track" id="carouselTrack">
                 @foreach($products as $product)
-                    @include('components.product-card', ['product' => $product])
+                    <div class="product-carousel-item">
+                        @include('components.product-card', ['product' => $product])
+                    </div>
                 @endforeach
             </div>
-
-            <button class="slider-arrow next" aria-label="Next">
-                <i class="bi bi-chevron-right"></i>
-            </button>
         </div>
+    
+        <button class="carousel-btn right" id="carouselNext">
+            <i class="bi bi-chevron-right"></i>
+        </button>
     </div>
 </section>
 

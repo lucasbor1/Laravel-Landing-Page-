@@ -289,11 +289,16 @@ body {
 }
 
 .product-card {
-  display: flex;
-  flex-direction: column;
-  background: white;
-  border: none;
-  padding: 0.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
 }
 
 .product-category {
@@ -476,4 +481,46 @@ body {
   .search-box {
     max-width: 100%;
   }
+}
+
+/* ==================== CARROSSEL ==================== */
+.product-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.product-carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+  gap: 1.5rem;
+}
+
+.product-carousel-item {
+  flex: 0 0 calc(100% / 3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.carousel-btn.left {
+  left: 0;
+}
+
+.carousel-btn.right {
+  right: 0;
 }
