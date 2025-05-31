@@ -38,12 +38,14 @@
 
 <!-- Benefits Section -->
 <section class="benefits py-5">
-    <div class="container">
+    <div class="container benefits-container">
         <!-- Benefits label and header -->
         <div class="section-header mb-5">
-            <span class="benefits-label">Benefits</span>
-            <h2 class="section-title mt-2">Benefits when using<br>our services</h2>
-            <p class="section-subtitle">Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non purus parturient.</p>
+            <div class="benefits-label mb-2">Benefits</div>
+            <div class="header-content d-flex">
+                <h2 class="section-title mb-0">Benefits when using our services</h2>
+                <p class="section-subtitle mb-0">Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non purus parturient.</p>
+            </div>
         </div>
         
         <!-- Benefits cards -->
