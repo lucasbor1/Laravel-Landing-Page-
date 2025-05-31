@@ -595,3 +595,159 @@ body {
 .carousel-btn i {
   color: #151411;
 }
+
+
+/* ==================== OUR PRODUCT SECTION ==================== */
+.our-product {
+  padding: 5rem 0;
+  background-color: white;
+}
+
+.our-product .product-label {
+  color: #F58A07;
+  font-weight: 500;
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.our-product .section-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #1E1E1E;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.our-product .section-description {
+  color: #666;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 90%;
+}
+
+.btn-learn-more {
+  background-color: #518581;
+  color: white;
+  padding: 0.875rem 2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-learn-more:hover {
+  background-color: #426c68;
+  color: white;
+}
+
+/* Estatísticas */
+.stats-row {
+  display: flex;
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.stat-item {
+  flex: 1;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1E1E1E;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Galeria de imagens */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.horizontal-image {
+  grid-column: 1;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.vertical-image {
+  grid-column: 2;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.horizontal-image img,
+.vertical-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+  .our-product .section-title {
+      font-size: 3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .our-product .section-title {
+      font-size: 2.5rem;
+  }
+  
+  .horizontal-image {
+      height: 250px;
+  }
+  
+  .vertical-image {
+      height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .our-product .section-title {
+      font-size: 2rem;
+  }
+  
+  .stats-row {
+      flex-direction: column;
+      gap: 2rem;
+  }
+  
+  .image-gallery {
+      margin-top: 3rem;
+      grid-template-columns: 1fr;
+  }
+  
+  .horizontal-image,
+  .vertical-image {
+      grid-column: 1;
+      height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .our-product .section-title {
+      font-size: 1.75rem;
+  }
+  
+  .section-description {
+      font-size: 1rem;
+  }
+  
+  .stat-number {
+      font-size: 2rem;
+  }
+}

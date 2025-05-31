@@ -110,6 +110,53 @@
     </div>
 </section>
 
+<!-- Our Product Section -->
+<section class="our-product py-5">
+    <div class="container products-container">
+        <div class="row">
+            <div class="col-lg-6 pe-lg-5">
+                <span class="product-label">Our Product</span>
+                <h2 class="section-title mt-2">
+                    Crafted by<br>
+                    talented<br>
+                    and high<br>
+                    quality<br>
+                    material
+                </h2>
+                <p class="section-description mb-4">
+                    Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non purus parturient. morbi fermentum, vivamus et accumsan dui tincidunt pulvinar
+                </p>
+                <button class="btn btn-learn-more">Learn More</button>
+
+                <div class="stats-row mt-5">
+                    <div class="stat-item">
+                        <h3 class="stat-number">20+</h3>
+                        <p class="stat-label">Years Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-number">483</h3>
+                        <p class="stat-label">Happy Client</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-number">150+</h3>
+                        <p class="stat-label">Project Finished</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="image-gallery">
+                    <div class="horizontal-image">
+                        <img src="{{ asset('images/madeira.png') }}" alt="madeira">
+                    </div>
+                    <div class="vertical-image">
+                        <img src="{{ asset('images/living-room.jpg') }}" alt="Móvel">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Testimonials Section -->
 <section class="testimonials py-5 bg-light">
     <div class="container">
