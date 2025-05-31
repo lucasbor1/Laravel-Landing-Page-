@@ -1,36 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Seção Central -->
-<section class="center-section">
-       <!-- Texto -->
-       <div class="center-text">
-        <h1 class="display-4 fw-bold mb-4">Discover Furniture With<br>High Quality Wood</h1>
-        <p class="lead">
-            Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi,<br>
-            adipiscing mauris non. Purus parturient viverra nunc, tortor sit laoreet.<br>
-            Quam tincidunt aliquam adipiscing tempor.
-        </p>
-    </div>
-        <!-- Conteúdo sobreposto -->
-        <div class="container">
-            <div class="center-content">
-                <!-- Barra de pesquisa -->
-                <div class="search-box">
-                    <div class="input-group">
-                        <input type="text" class="form-control rounded-0" placeholder="Search property">
-                        <button class="btn btn-dark rounded-0 px-4" type="button">
-                            SEARCH
-                        </button>
-                    </div>
+<section class="center-section d-flex flex-column align-items-center">
+    <div class="container d-flex align-items-center justify-content-center position-relative" style="max-width: 900px;">
+        <!-- Arrow on the left side -->
+        <img src="{{ asset('images/seta.png') }}" alt="Arrow" class="arrow-indicator me-3">
+
+        <div class="text-and-search flex-grow-1">
+            <!-- Large heading -->
+            <h1 class="center-title fw-bold mb-3">
+                Discover Furniture With<br>High Quality Wood ✨
+            </h1>
+            <!-- Subheading -->
+            <p class="center-text mb-4">
+                Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi,<br>
+                adipiscing mauris non. Purus parturient viverra nunc, tortor sit laoreet.<br>
+                Quam tincidunt aliquam adipiscing tempor.
+            </p>
+
+            <!-- Search box -->
+            <div class="search-box mb-0">
+                <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0">
+                        <i class="bi bi-search"></i>
+                    </span>
+                    <input type="text" class="form-control border-start-0" placeholder="Search property" aria-label="Search property">
+                    <button class="btn btn-search" type="button">Search</button>
                 </div>
-             
             </div>
         </div>
-    <!-- Imagem de fundo -->
-    <img src="{{ asset('images/center.png') }}" alt="High Quality Furniture" class="center-image">
-    
+    </div>
 
+    <!-- Main image below, search box touching top -->
+    <div class="main-image-container mt-3">
+        <img src="{{ asset('images/center.png') }}" alt="High Quality Furniture" class="center-image img-fluid rounded">
+    </div>
 </section>
 
 <!-- Benefits Section -->
