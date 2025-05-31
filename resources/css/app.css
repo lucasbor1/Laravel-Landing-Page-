@@ -61,18 +61,18 @@ body {
 }
 
 .center-title {
-  font-size: 3.0rem;
-  line-height: 1.2;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: #333;
+    font-size: 2.5rem; /* Reduced from 3.0rem */
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 1.25rem; /* Slightly reduced margin */
+    color: #333;
 }
 
 .center-text {
-  font-size: 1.1rem;
-  color: #666;
-  line-height: 1.8;
-  margin-bottom: 2rem;
+    font-size: 1rem; /* Reduced from 1.1rem */
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
 }
 
 .search-box {
@@ -173,20 +173,20 @@ body {
 .benefits-label {
     color: #F58A07;
     font-weight: 500;
-    font-size: 1.125rem;
+    font-size: 1rem; 
 }
 
 .section-title {
-    font-size: 2.75rem;
+    font-size: 2.25rem;
     font-weight: 700;
     color: #1E1E1E;
     line-height: 1.2;
-    margin: 1rem 0;
+    margin: 0.75rem 0;
 }
 
 .section-subtitle {
     color: #666;
-    font-size: 1.125rem;
+    font-size: 1rem; 
     line-height: 1.6;
     max-width: 600px;
     margin: 0 auto;
@@ -204,15 +204,15 @@ body {
 }
 
 .benefit-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem; /* Reduced from 1.5rem */
     font-weight: 600;
     color: #1E1E1E;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .benefit-text {
     color: #666;
-    font-size: 1rem;
+    font-size: 0.95rem; /* Slightly reduced from 1rem */
     line-height: 1.6;
 }
 
@@ -274,15 +274,19 @@ body {
 
 /* ==================== RESPONSIVIDADE ==================== */
 @media (max-width: 1200px) {
-  .center-title {
-    font-size: 3rem;
-  }
+    .center-title {
+        font-size: 2.25rem;
+    }
 }
 
 @media (max-width: 992px) {
-  .center-title {
-    font-size: 2.75rem;
-  }
+    .center-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
 
   .center-text {
     font-size: 1rem;
@@ -298,9 +302,17 @@ body {
 }
 
 @media (max-width: 768px) {
-  .center-title {
-    font-size: 2.3rem;
-  }
+    .center-title {
+        font-size: 1.75rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .benefit-title {
+        font-size: 1.15rem;
+    }
 
   .center-text {
     font-size: 1rem;
@@ -313,9 +325,13 @@ body {
 }
 
 @media (max-width: 576px) {
-  .center-title {
-    font-size: 2rem;
-  }
+    .center-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
 
   .search-box .btn-search {
     padding: 0 20px;
