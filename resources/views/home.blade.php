@@ -42,7 +42,7 @@
         <!-- Benefits label and header -->
         <div class="section-header mb-5">
             <div class="benefits-label mb-2">Benefits</div>
-            <div class="header-content d-flex">
+            <div class="header-content d-flex justify-content-between">
                 <h2 class="section-title mb-0">Benefits when using our services</h2>
                 <p class="section-subtitle mb-0">Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non purus parturient.</p>
             </div>
