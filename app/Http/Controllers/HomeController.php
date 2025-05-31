@@ -17,6 +17,7 @@ class HomeController extends Controller
                 'price' => 80.47,
                 'image' => 'images/bookshelf.jpg'
             ],
+
             [
                 'category' => 'Chair',
                 'name' => 'White Aesthetic Chair',
@@ -24,6 +25,7 @@ class HomeController extends Controller
                 'price' => 63.47,
                 'image' => 'images/chair.jpg'
             ],
+
             [
                 'category' => 'Lamp',
                 'name' => 'Bardono Smart Lamp',
@@ -31,6 +33,7 @@ class HomeController extends Controller
                 'price' => 62.23,
                 'image' => 'images/lamp.jpg'
             ],
+
             [
                 'category' => 'Sofa',
                 'name' => 'Sofa Empuk Banget',
@@ -38,6 +41,7 @@ class HomeController extends Controller
                 'price' => 58.39,
                 'image' => 'images/sofa.jpg'
             ],
+
             [
                 'category' => 'Decor',
                 'name' => 'Framed Plant Print',
@@ -45,6 +49,7 @@ class HomeController extends Controller
                 'price' => 49.99,
                 'image' => 'images/decor.jpg'
             ],
+
             [
                 'category' => 'Furniture',
                 'name' => 'Modern White Cabinet',
@@ -59,6 +64,7 @@ class HomeController extends Controller
                 'price' => 149.00,
                 'image' => 'images/workspace.jpg'
             ],
+
             [
                 'category' => 'Desk',
                 'name' => 'Minimalist Vase Decor',
@@ -66,6 +72,7 @@ class HomeController extends Controller
                 'price' => 29.90,
                 'image' => 'images/desk.jpg'
             ],
+
             [
                 'category' => 'Living Room',
                 'name' => 'Woven Wood Cabinet',
@@ -75,11 +82,13 @@ class HomeController extends Controller
             ]
         ];
 
+
         // Dados mocados de depoimentos
         $faker = Faker::create();
         
         // Gerar 10 depoimentos com Lorem Ipsum
         $testimonials = [];
+        
         for ($i = 0; $i < 10; $i++) {
             $testimonials[] = [
                 'name' => $faker->name,
@@ -89,7 +98,7 @@ class HomeController extends Controller
             ];
         }
 
-        // Dados dos artigos com estrutura para o carrossel
+        $articles = [];
         $articleImages = [
             'desk.jpg',
             'workspace.jpg',
@@ -97,19 +106,11 @@ class HomeController extends Controller
             'decor.jpg'
         ];
         
-        $articles = [];
-        $titles = [
-            'Create Cozy Dining Room Vibes',
-            '6 ways to give your home minimalistic vibes',
-            'How to make your interiors cooler and more stylish',
-            'Elements to add character to your space'
-        ];
-        
         for ($i = 0; $i < 4; $i++) {
             $authorName = $faker->name;
             $articles[] = [
                 'category' => $faker->randomElement(['Tips and Trick', 'Design Inspiration']),
-                'title' => $titles[$i],
+                'title' => $faker->sentence(6),
                 'description' => $faker->paragraph(1),
                 'image' => 'images/' . $articleImages[$i],
                 'author' => [
@@ -117,12 +118,11 @@ class HomeController extends Controller
                     'avatar' => 'https://ui-avatars.com/api/?name=' . urlencode($authorName) . '&background=random&color=fff&size=60',
                     'date' => $faker->date('l, j F Y'),
                 ],
-                'featured' => $i === 0, // O primeiro artigo começa como featured
-                'active' => $i === 0,   // O primeiro artigo começa como ativo
-                'order' => $i           // Ordem inicial dos artigos
+                'featured' => $i === 0,
             ];
         }
 
         return view('home', compact('products', 'testimonials', 'articles'));
+
     }
 }

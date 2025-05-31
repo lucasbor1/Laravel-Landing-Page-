@@ -182,7 +182,7 @@
         </div>
     </section>
 
-<!-- Articles Section -->
+ <!-- Articles Section -->
 <section class="articles py-5">
     <div class="container articles-container">
         <div class="articles-header">
@@ -192,47 +192,59 @@
         </div>
 
         <div class="articles-grid">
-            <div class="articles-wrapper">
-                <!-- Articles Container -->
-                <div class="articles-container" id="articlesContainer">
-                    @foreach($articles as $index => $article)
-                        <article class="article-item {{ $article['active'] ? 'featured-article' : 'small-article' }}" data-index="{{ $index }}">
-                            <div class="article-image-container">
-                                <img src="{{ asset($article['image']) }}" alt="{{ $article['title'] }}" class="article-image">
-                                <div class="article-overlay">
-                                    <span class="article-category">{{ $article['category'] }}</span>
-                                    <h3 class="article-title">{{ $article['title'] }}</h3>
-                                    <p class="article-description">{{ $article['description'] }}</p>
-                                    @if($article['active'])
+            <!-- Left Side - Featured Article Carousel -->
+            <div class="featured-articles-carousel">
+                <div class="featured-articles-track" id="featuredArticlesTrack">
+                    @foreach($articles as $article)
+                        @if($article['featured'] ?? false)
+                            <div class="featured-article">
+                                <div class="article-image-container">
+                                    <img src="{{ asset($article['image']) }}" alt="{{ $article['title'] }}" class="article-image">
+                                    <div class="article-overlay">
+                                        <div class="article-category">{{ $article['category'] }}</div>
+                                        <h3 class="article-title">{{ $article['title'] }}</h3>
+                                        <p class="article-description">{{ $article['description'] }}</p>
                                         <a href="#" class="read-more">Read More</a>
-                                    @endif
-                                </div>
-                            </div>
-                            
-                            @unless($article['active'])
-                                <div class="article-content">
-                                    <div class="article-author">
-                                        <img src="{{ asset($article['author']['avatar']) }}" alt="{{ $article['author']['name'] }}" class="author-avatar">
-                                        <div class="author-info">
-                                            <span class="author-name">By {{ $article['author']['name'] }}</span>
-                                            <span class="article-date">{{ $article['author']['date'] }}</span>
-                                        </div>
                                     </div>
                                 </div>
-                            @endunless
-                        </article>
+                            </div>
+                        @endif
                     @endforeach
                 </div>
-
                 <!-- Navigation Arrows -->
                 <div class="articles-navigation">
-                    <button class="nav-arrow prev" id="articlesPrev">
+                    <button class="nav-arrow prev" id="featuredPrev">
                         <i class="bi bi-arrow-left"></i>
                     </button>
-                    <button class="nav-arrow next" id="articlesNext">
+                    <button class="nav-arrow next" id="featuredNext">
                         <i class="bi bi-arrow-right"></i>
                     </button>
                 </div>
+            </div>
+
+            <!-- Right Side - Small Articles -->
+            <div class="small-articles">
+                @foreach($articles as $article)
+                    @unless($article['featured'] ?? false)
+                        <article class="small-article">
+                            <div class="article-image-container">
+                                <img src="{{ asset($article['image']) }}" alt="{{ $article['title'] }}">
+                            </div>
+                            <div class="article-content">
+                                <span class="article-category">{{ $article['category'] }}</span>
+                                <h3 class="article-title">{{ $article['title'] }}</h3>
+                                <p class="article-description">{{ $article['description'] }}</p>
+                                <div class="article-author">
+                                    <img src="{{ asset($article['author']['avatar']) }}" alt="{{ $article['author']['name'] }}">
+                                    <div class="author-info">
+                                        <span class="author-name">By {{ $article['author']['name'] }}</span>
+                                        <span class="article-date">{{ $article['author']['date'] }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    @endunless
+                @endforeach
             </div>
         </div>
     </div>
