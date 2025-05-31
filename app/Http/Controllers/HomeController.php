@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Faker\Factory as Faker;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -84,20 +84,19 @@ class HomeController extends Controller
 
 
         // Dados mocados de depoimentos
-        $testimonials = [
-            [
-                'name' => 'Janne Cooper',
-                'comment' => 'Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non.',
-                'rating' => 4.3,
-                'image' => 'images/4.jpg',
-            ],
-            [
-                'name' => 'Cobocannaeru',
-                'comment' => 'Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non.',
-                'rating' => 5.0,
-                'image' => 'images/5.jpg',
-            ],
-        ];
+        $faker = Faker::create();
+        
+        // Gerar 10 depoimentos com Lorem Ipsum
+        $testimonials = [];
+        
+        for ($i = 0; $i < 10; $i++) {
+            $testimonials[] = [
+                'name' => $faker->name,
+                'comment' => $faker->paragraph(2),
+                'rating' => $faker->randomFloat(1, 3.0, 5.0),
+                'image' => 'https://ui-avatars.com/api/?name=' . urlencode($faker->name) . '&background=random&color=fff&size=60',
+            ];
+        }
 
         return view('home', compact('products', 'testimonials'));
     }
