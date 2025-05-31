@@ -182,41 +182,70 @@
         </div>
     </section>
 
-    <!-- Articles Section -->
+ <!-- Articles Section -->
 <section class="articles py-5">
     <div class="container articles-container">
-        <span class="articles-label">Articles</span>
-        <h2 class="section-title">The best furniture comes from Lalasia</h2>
-        <p class="section-subtitle">Pellentesque etiam blandit in tincidunt at donec.</p>
+        <div class="articles-header">
+            <span class="articles-label">Articles</span>
+            <h2 class="section-title">The best furniture comes from Lalasia</h2>
+            <p class="section-subtitle">Pellentesque etiam blandit in tincidunt at donec.</p>
+        </div>
 
         <div class="articles-grid">
-            <!-- Featured Article -->
-            @foreach($articles as $article)
-                @if($article['featured'] ?? false)
-                    <div class="featured-article">
-                        <x-article-card :article="$article" :featured="true" />
-                    </div>
-                @endif
-            @endforeach
+            <!-- Left Side - Featured Article Carousel -->
+            <div class="featured-articles-carousel">
+                <div class="featured-articles-track" id="featuredArticlesTrack">
+                    @foreach($articles as $article)
+                        @if($article['featured'] ?? false)
+                            <div class="featured-article">
+                                <div class="article-image-container">
+                                    <img src="{{ asset($article['image']) }}" alt="{{ $article['title'] }}" class="article-image">
+                                    <div class="article-overlay">
+                                        <div class="article-category">{{ $article['category'] }}</div>
+                                        <h3 class="article-title">{{ $article['title'] }}</h3>
+                                        <p class="article-description">{{ $article['description'] }}</p>
+                                        <a href="#" class="read-more">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
+                <!-- Navigation Arrows -->
+                <div class="articles-navigation">
+                    <button class="nav-arrow prev" id="featuredPrev">
+                        <i class="bi bi-arrow-left"></i>
+                    </button>
+                    <button class="nav-arrow next" id="featuredNext">
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
 
-            <!-- Regular Articles -->
-            <div class="regular-articles">
+            <!-- Right Side - Small Articles -->
+            <div class="small-articles">
                 @foreach($articles as $article)
                     @unless($article['featured'] ?? false)
-                        <x-article-card :article="$article" />
+                        <article class="small-article">
+                            <div class="article-image-container">
+                                <img src="{{ asset($article['image']) }}" alt="{{ $article['title'] }}">
+                            </div>
+                            <div class="article-content">
+                                <span class="article-category">{{ $article['category'] }}</span>
+                                <h3 class="article-title">{{ $article['title'] }}</h3>
+                                <p class="article-description">{{ $article['description'] }}</p>
+                                <div class="article-author">
+                                    <img src="{{ asset($article['author']['avatar']) }}" alt="{{ $article['author']['name'] }}">
+                                    <div class="author-info">
+                                        <span class="author-name">By {{ $article['author']['name'] }}</span>
+                                        <span class="article-date">{{ $article['author']['date'] }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
                     @endunless
                 @endforeach
             </div>
-        </div>
-
-        <!-- Navigation Arrows -->
-        <div class="articles-navigation">
-            <button class="nav-arrow prev">
-                <i class="bi bi-arrow-left"></i>
-            </button>
-            <button class="nav-arrow next">
-                <i class="bi bi-arrow-right"></i>
-            </button>
         </div>
     </div>
 </section>

@@ -4,19 +4,27 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 document.addEventListener('DOMContentLoaded', function () {
     // Função genérica para inicializar carrossel
-    function initializeCarousel(trackId, nextId, prevId, gapSize = 24) {
+    function initializeCarousel(trackId, nextId, prevId, options = {}) {
         const track = document.getElementById(trackId);
         const btnNext = document.getElementById(nextId);
         const btnPrev = document.getElementById(prevId);
 
         if (!track || !btnNext || !btnPrev) return;
 
+        const {
+            gapSize = 24,
+            itemSelector = '.product-carousel-item',
+            fullWidth = false
+        } = options;
+
         let itemWidth;
         let currentPosition = 0;
 
         const updateItemWidth = () => {
-            const item = track.querySelector('.product-carousel-item, .testimonial-carousel-item');
-            if (item) itemWidth = item.offsetWidth + gapSize;
+            const item = track.querySelector(itemSelector);
+            if (item) {
+                itemWidth = fullWidth ? track.offsetWidth : item.offsetWidth + gapSize;
+            }
         };
 
         const moveNext = () => {
@@ -45,7 +53,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Inicializar ambos os carrosséis
-    initializeCarousel('carouselTrack', 'carouselNext', 'carouselPrev');
-    initializeCarousel('testimonialTrack', 'testimonialNext', 'testimonialPrev', 32); // gap de 32px para testimonials
+    // Inicializar os três carrosséis
+    initializeCarousel('carouselTrack', 'carouselNext', 'carouselPrev', {
+        itemSelector: '.product-carousel-item',
+        gapSize: 24
+    });
+
+    initializeCarousel('testimonialTrack', 'testimonialNext', 'testimonialPrev', {
+        itemSelector: '.testimonial-carousel-item',
+        gapSize: 32
+    });
+
+    initializeCarousel('featuredArticlesTrack', 'featuredPrev', 'featuredNext', {
+        itemSelector: '.featured-article',
+        fullWidth: true 
+    });
 });
