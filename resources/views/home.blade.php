@@ -79,24 +79,34 @@
 
 <!-- Products Section -->
 <section class="products py-5">
-    <div class="position-relative">
-        <button class="carousel-btn left" id="carouselPrev">
-            <i class="bi bi-chevron-left"></i>
-        </button>
-    
-        <div class="product-carousel-wrapper">
-            <div class="product-carousel-track" id="carouselTrack">
-                @foreach($products as $product)
-                    <div class="product-carousel-item">
-                        @include('components.product-card', ['product' => $product])
-                    </div>
-                @endforeach
-            </div>
+    <div class="container products-container">
+        <!-- Products header -->
+        <div class="section-header text-center mb-5">
+            <span class="product-label">Product</span>
+            <h2 class="section-title mt-2">Our popular product</h2>
+            <p class="section-subtitle">Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non purus parturient.</p>
         </div>
-    
-        <button class="carousel-btn right" id="carouselNext">
-            <i class="bi bi-chevron-right"></i>
-        </button>
+
+        <!-- Carousel wrapper -->
+        <div class="position-relative product-carousel">
+            <button class="carousel-btn left" id="carouselPrev">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+        
+            <div class="product-carousel-wrapper">
+                <div class="product-carousel-track" id="carouselTrack">
+                    @foreach($products as $product)
+                        <div class="product-carousel-item">
+                            @include('components.product-card', ['product' => $product])
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        
+            <button class="carousel-btn right" id="carouselNext">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+        </div>
     </div>
 </section>
 

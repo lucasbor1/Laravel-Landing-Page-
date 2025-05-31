@@ -6,23 +6,38 @@ document.addEventListener('DOMContentLoaded', function () {
     const btnNext = document.getElementById('carouselNext');
     const btnPrev = document.getElementById('carouselPrev');
 
-    if (!track || !btnNext || !btnPrev) return; 
+    if (!track || !btnNext || !btnPrev) return;
 
-    const itemWidth = track.querySelector('.product-carousel-item').offsetWidth + 24;
+    let itemWidth;
     let currentPosition = 0;
-    const maxPosition = -(track.children.length - 3) * itemWidth;
 
-    btnNext.addEventListener('click', () => {
-        if (currentPosition > maxPosition) {
-            currentPosition -= itemWidth;
-            track.style.transform = `translateX(${currentPosition}px)`;
-        }
-    });
+    const updateItemWidth = () => {
+        const item = track.querySelector('.product-carousel-item');
+        if (item) itemWidth = item.offsetWidth + 24;
+    };
 
-    btnPrev.addEventListener('click', () => {
-        if (currentPosition < 0) {
-            currentPosition += itemWidth;
-            track.style.transform = `translateX(${currentPosition}px)`;
+    const moveNext = () => {
+        currentPosition -= itemWidth;
+        if (Math.abs(currentPosition) >= track.scrollWidth) {
+            currentPosition = 0;
         }
+        track.style.transform = `translateX(${currentPosition}px)`;
+    };
+
+    const movePrev = () => {
+        currentPosition += itemWidth;
+        if (currentPosition > 0) {
+            currentPosition = -(track.scrollWidth - track.parentElement.offsetWidth);
+        }
+        track.style.transform = `translateX(${currentPosition}px)`;
+    };
+
+    btnNext.addEventListener('click', moveNext);
+    btnPrev.addEventListener('click', movePrev);
+
+    updateItemWidth();
+    window.addEventListener('resize', () => {
+        updateItemWidth();
+        track.style.transform = `translateX(${currentPosition}px)`;
     });
 });
