@@ -151,16 +151,34 @@
     </div>
 </section>
 
-<!-- Testimonials Section -->
-<section class="testimonials py-5 bg-light">
-    <div class="container">
-        <h2 class="text-center mb-5">What our customer say</h2>
-        
-        <div class="row">
-            @foreach($testimonials as $testimonial)
-                @include('components.testimonial', ['testimonial' => $testimonial])
-            @endforeach
+    <!-- Testimonials Section -->
+    <section class="testimonials py-5">
+        <div class="container testimonials-container">
+            <!-- Testimonials header -->
+            <div class="section-header text-center mb-5">
+                <span class="testimonial-label">Testimonials</span>
+                <h2 class="section-title mt-2">What our customer say</h2>
+                <p class="section-subtitle">Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non purus parturient.</p>
+            </div>
+
+            <!-- Carousel wrapper -->
+            <div class="position-relative testimonial-carousel">
+                <button class="carousel-btn left" id="testimonialPrev">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+            
+                <div class="testimonial-carousel-wrapper">
+                    <div class="testimonial-carousel-track" id="testimonialTrack">
+                        @foreach($testimonials as $testimonial)
+                            @include('components.testimonial', ['testimonial' => $testimonial])
+                        @endforeach
+                    </div>
+                </div>
+            
+                <button class="carousel-btn right" id="testimonialNext">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 @endsection
