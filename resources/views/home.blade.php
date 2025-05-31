@@ -116,12 +116,8 @@
         <div class="row">
             <div class="col-lg-6">
                 <span class="product-label">Our Product</span>
-                <h2 class="section-title mt-2">
-                    Crafted by<br>
-                    talented<br>
-                    and high<br>
-                    quality<br>
-                    material
+                <h2 class="container-title mt-1" style="font-size: 3rem">
+                    Crafted by talented and high quality material
                 </h2>
                 <p class="section-description mb-4">
                     Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non purus parturient. morbi fermentum, vivamus et accumsan dui tincidunt pulvinar
