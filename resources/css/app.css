@@ -147,34 +147,72 @@ body {
     display: block;
   }
 
-/* ==================== BENEFITS ==================== */
+/* ==================== BENEFITS SECTION ==================== */
 .benefits {
-  padding: 5rem 0;
-  background-color: #f8f9fa;
+    padding: 5rem 0;
+    background-color: white;
 }
 
-.benefits .card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: none;
-  border-radius: 0;
-  height: 100%;
+/* Benefits header */
+.benefits-label {
+    color: #F58A07;
+    font-weight: 500;
+    font-size: 1.125rem;
 }
 
-.benefits .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+.section-title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: #1E1E1E;
+    line-height: 1.2;
+    margin: 1rem 0;
 }
 
-.icon-box {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
-  border-radius: 50%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+.section-subtitle {
+    color: #666;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Benefits items */
+.benefit-item {
+    padding: 1rem;
+}
+
+.benefit-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.5rem;
+}
+
+.benefit-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1E1E1E;
+    margin-bottom: 1rem;
+}
+
+.benefit-text {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .benefit-title {
+        font-size: 1.25rem;
+    }
 }
 
 /* ==================== PRODUCTS ==================== */
