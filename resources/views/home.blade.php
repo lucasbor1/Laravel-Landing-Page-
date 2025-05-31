@@ -79,16 +79,27 @@
 
 <!-- Products Section -->
 <section class="products py-5">
-    <div class="container">
+    <div class="container products-container">
         <div class="section-header mb-5">
-            <h2>Our popular product</h2>
-            <p>Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non purus parturient.</p>
+            <span class="product-label">Product</span>
+            <h2 class="section-title mt-2">Our popular product</h2>
+            <p class="section-subtitle">Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non purus parturient.</p>
         </div>
         
-        <div class="row">
-            @foreach($products as $product)
-                @include('components.product-card', ['product' => $product])
-            @endforeach
+        <div class="position-relative">
+            <button class="slider-arrow prev" aria-label="Previous">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+            
+            <div class="row">
+                @foreach($products as $product)
+                    @include('components.product-card', ['product' => $product])
+                @endforeach
+            </div>
+
+            <button class="slider-arrow next" aria-label="Next">
+                <i class="bi bi-chevron-right"></i>
+            </button>
         </div>
     </div>
 </section>

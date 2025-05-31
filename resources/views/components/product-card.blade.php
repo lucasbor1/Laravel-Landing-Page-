@@ -1,10 +1,14 @@
 <div class="col-lg-4 col-md-6 mb-4">
-    <div class="card h-100 border-0 shadow-sm">
-        <img src="{{ asset($product['image']) }}" class="card-img-top" alt="{{ $product['name'] }}" style="height: 250px; object-fit: cover;">
-        <div class="card-body">
-            <h5 class="card-title">{{ $product['name'] }}</h5>
-            <p class="card-text text-muted">{{ $product['description'] }}</p>
-            <p class="fw-bold text-primary">{{ $product['price'] }}</p>
+    <div class="product-card">
+        
+        <div class="product-image-container">
+            <img src="{{ asset($product['image']) }}" class="product-image" alt="{{ $product['name'] }}">
+        </div>
+        <div class="product-content">
+            <span class="product-category">{{ $product['category'] }}</span>
+            <h3 class="product-title">{{ $product['name'] }}</h3>
+            <p class="product-description">{{ $product['description'] }}</p>
+            <p class="product-price">${{ number_format($product['price'], 2) }}</p>
         </div>
     </div>
 </div>
