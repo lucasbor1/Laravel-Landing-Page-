@@ -14,8 +14,8 @@
             </h1>
       
             <p class="center-text mb-4">
-                Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi,<br>
-                adipiscing mauris non. Purus parturient viverra nunc, tortor sit laoreet.<br>
+                Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi,
+                adipiscing mauris non. Purus parturient viverra nunc, tortor sit laoreet.
                 Quam tincidunt aliquam adipiscing tempor.
             </p>
            
