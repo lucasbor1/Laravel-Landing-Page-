@@ -856,15 +856,15 @@ html {
 /* Estatísticas */
 .stats-row {
   display: flex;
-  justify-content: space-between;
-  gap: 4rem;
-  margin-bottom: 3rem;
+  flex-wrap: nowrap;
+  gap: 32px;
+  overflow-x: auto;
 }
-
-.stat-item {
-  flex: 1;
+.stats-row .stat-item {
+  flex: 0 0 auto;
+  text-align: center;
+  min-width: 120px;
 }
-
 .stat-number {
   font-size: 3rem;
   font-weight: 700;
