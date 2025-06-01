@@ -56,18 +56,24 @@ Antes de executar o projeto, certifique-se de ter instalado:
 git clone https://github.com/lucasbor1/Laravel-Landing-Page-.git
 
 # 2. Acesse o diretório
-cd lalasia
+cd Laravel-Landing-Page-
 
-# 3. Instale as dependências do Laravel
+# 3. Copie o arquivo .env de exemplo
+cp .env.example .env
+
+# 4. Gere a chave da aplicação
+php artisan key:generate
+
+# 5. Instale as dependências do Laravel
 composer install
 
-# 4. Instale as dependências do frontend (JS/CSS)
+# 6. Instale as dependências do frontend (JS/CSS)
 npm install
 
-# 5. Compile os assets com Vite
+# 7. Compile os assets com Vite
 npm run dev
 
-# 6. Inicie o servidor local
+# 8. Inicie o servidor local
 php artisan serve
 
 🖥️ Acesse em: http://localhost:8000
