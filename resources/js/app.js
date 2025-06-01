@@ -5,13 +5,13 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // === AOS Scroll Animation ===
+    // Inicializa AOS (Animações ao rolar a página)
     AOS.init({
         duration: 1000,
         once: true
     });
 
-    // === Carousel Helper ===
+    // Função para inicializar qualquer carrossel horizontal com botões
     function initializeCarousel(trackId, nextId, prevId, options = {}) {
         const track = document.getElementById(trackId);
         const btnNext = document.getElementById(nextId);
@@ -37,17 +37,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const moveNext = () => {
             currentPosition -= itemWidth;
-            if (Math.abs(currentPosition) >= track.scrollWidth - track.parentElement.offsetWidth) {
+            const maxScroll = track.scrollWidth - track.parentElement.offsetWidth;
+
+            if (Math.abs(currentPosition) >= maxScroll) {
                 currentPosition = 0;
             }
+
             track.style.transform = `translateX(${currentPosition}px)`;
         };
 
         const movePrev = () => {
             currentPosition += itemWidth;
+            const maxScroll = track.scrollWidth - track.parentElement.offsetWidth;
+
             if (currentPosition > 0) {
-                currentPosition = -(track.scrollWidth - track.parentElement.offsetWidth);
+                currentPosition = -maxScroll;
             }
+
             track.style.transform = `translateX(${currentPosition}px)`;
         };
 
@@ -55,13 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
         btnPrev.addEventListener('click', movePrev);
 
         updateItemWidth();
+
         window.addEventListener('resize', () => {
             updateItemWidth();
             track.style.transform = `translateX(${currentPosition}px)`;
         });
     }
 
-    // === Initialize All Carousels ===
+    // Inicializa carrosséis (produtos, depoimentos e artigos)
     initializeCarousel('carouselTrack', 'carouselNext', 'carouselPrev', {
         itemSelector: '.product-carousel-item',
         gapSize: 24
@@ -77,9 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
         fullWidth: true
     });
 
-    // === Autoplay: Testimonials (1 by 1) ===
+    // Autoplay: Carrossel de depoimentos (um por um)
     const testimonialTrack = document.getElementById('testimonialTrack');
     const testimonialItems = testimonialTrack?.querySelectorAll('.testimonial-carousel-item');
+
     if (testimonialTrack && testimonialItems?.length) {
         let tIndex = 0;
         const tGap = 32;
@@ -89,17 +97,20 @@ document.addEventListener('DOMContentLoaded', () => {
             tIndex++;
             const tMax = testimonialTrack.scrollWidth - testimonialTrack.parentElement.offsetWidth;
             let tPos = -(tIndex * tItemWidth);
+
             if (Math.abs(tPos) >= tMax) {
                 tIndex = 0;
                 tPos = 0;
             }
+
             testimonialTrack.style.transform = `translateX(${tPos}px)`;
         }, 4000);
     }
 
-    // === Autoplay: Products (1 by 1) ===
+    // Autoplay: Carrossel de produtos (um por um)
     const productTrack = document.getElementById('carouselTrack');
     const productItems = productTrack?.querySelectorAll('.product-carousel-item');
+
     if (productTrack && productItems?.length) {
         let pIndex = 0;
         const pGap = 24;
@@ -109,10 +120,12 @@ document.addEventListener('DOMContentLoaded', () => {
             pIndex++;
             const pMax = productTrack.scrollWidth - productTrack.parentElement.offsetWidth;
             let pPos = -(pIndex * pItemWidth);
+
             if (Math.abs(pPos) >= pMax) {
                 pIndex = 0;
                 pPos = 0;
             }
+
             productTrack.style.transform = `translateX(${pPos}px)`;
         }, 4000);
     }

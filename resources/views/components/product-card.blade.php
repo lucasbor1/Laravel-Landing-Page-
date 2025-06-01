@@ -1,6 +1,5 @@
 <div class="col-lg-12 col-md-6 mb-4">
     <div class="product-card">
-        
         <div class="product-image-container">
             <img src="{{ asset($product['image']) }}" class="product-image" alt="{{ $product['name'] }}">
         </div>

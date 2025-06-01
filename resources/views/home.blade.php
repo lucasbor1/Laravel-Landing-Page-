@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Center Section -->
+
 <section class="center-section d-flex flex-column align-items-center position-relative" data-aos="fade-down">
     <div class="container d-flex align-items-center justify-content-center position-relative" style="max-width: 900px;">
         <img src="{{ asset('images/seta.png') }}" alt="Arrow" class="arrow-indicator position-absolute" data-aos="fade-up" data-aos-delay="200">
@@ -29,7 +29,6 @@
     </div>
 </section>
 
-<!-- Benefits Section -->
 <section class="benefits py-5" id="benefits">
     <div class="container benefits-container" data-aos="fade-up">
         <div class="section-header mb-5">
@@ -56,7 +55,6 @@
     </div>
 </section>
 
-<!-- Products Section -->
 <section class="products py-5" id="products">
     <div class="container products-container" data-aos="fade-up">
         <div class="section-header text-center mb-5">
@@ -80,7 +78,6 @@
     </div>
 </section>
 
-<!-- Our Product Section -->
 <section class="our-product py-5" id="our-product">
     <div class="container products-container" data-aos="fade-up">
         <div class="row">
@@ -89,7 +86,9 @@
                 <h2 class="container-title mt-1" style="font-size: 3rem">Crafted by talented and high quality material</h2>
                 <p class="section-description mb-4">Pellentesque etiam blandit in tincidunt at donec...</p>
                 <button class="btn btn-learn-more mb-4">Learn More</button>
-                <div class="wood-image-container" data-aos="zoom-in"><img src="{{ asset('images/madeira.png') }}" alt="madeira" class="wood-image"></div>
+                <div class="wood-image-container" data-aos="zoom-in">
+                    <img src="{{ asset('images/madeira.png') }}" alt="madeira" class="wood-image">
+                </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left">
                 <div class="stats-row mb-4">
@@ -108,37 +107,27 @@
     </div>
 </section>
 
-<!-- Testimonials Section -->
 <section class="testimonials py-5" id="services">
-        <div class="container testimonials-container">
-            <!-- Testimonials header -->
+    <div class="container testimonials-container">
         <div class="section-header text-center mb-5">
-                <span class="testimonial-label">Testimonials</span>
-                <h2 class="section-title mt-2">What our customer say</h2>
-                <p class="section-subtitle">Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non purus parturient.</p>
+            <span class="testimonial-label">Testimonials</span>
+            <h2 class="section-title mt-2">What our customer say</h2>
+            <p class="section-subtitle">Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non purus parturient.</p>
         </div>
-
-            <!-- Carousel wrapper -->
-            <div class="position-relative testimonial-carousel">
-            <button class="carousel-btn left" id="testimonialPrev">
-                <i class="bi bi-chevron-left"></i>
-            </button>
-            
+        <div class="position-relative testimonial-carousel">
+            <button class="carousel-btn left" id="testimonialPrev"><i class="bi bi-chevron-left"></i></button>
             <div class="testimonial-carousel-wrapper">
                 <div class="testimonial-carousel-track" id="testimonialTrack">
                     @foreach($testimonials as $testimonial)
-                            @include('components.testimonial', ['testimonial' => $testimonial])
+                        @include('components.testimonial', ['testimonial' => $testimonial])
                     @endforeach
                 </div>
             </div>
-            
-            <button class="carousel-btn right" id="testimonialNext">
-                <i class="bi bi-chevron-right"></i>
-            </button>
+            <button class="carousel-btn right" id="testimonialNext"><i class="bi bi-chevron-right"></i></button>
         </div>
     </div>
 </section>
-<!-- Articles Section -->
+
 <section class="articles py-5" id="article">
     <div class="container articles-container" data-aos="fade-up">
         <div class="articles-header" data-aos="fade-down">
@@ -174,7 +163,9 @@
                 @foreach($articles as $article)
                     @unless($article['featured'] ?? false)
                         <article class="small-article" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
-                            <div class="article-image-container"><img src="{{ asset($article['image']) }}" alt="{{ $article['title'] }}"></div>
+                            <div class="article-image-container">
+                                <img src="{{ asset($article['image']) }}" alt="{{ $article['title'] }}">
+                            </div>
                             <div class="article-content">
                                 <span class="article-category">{{ $article['category'] }}</span>
                                 <h3 class="article-title">{{ $article['title'] }}</h3>
@@ -194,4 +185,5 @@
         </div>
     </div>
 </section>
+
 @endsection

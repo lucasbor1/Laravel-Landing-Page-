@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Faker\Factory as Faker;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    // Lista simulada de produtos populares
     private $products = [
         [
             'category' => 'Bookshelf',
@@ -72,43 +74,25 @@ class HomeController extends Controller
         ]
     ];
 
-    public function search(Request $request)
-    {
-        $query = strtolower($request->get('q', ''));
-        
-        if (empty($query)) {
-            return response()->json([]);
-        }
-
-        $results = collect($this->products)->filter(function ($product) use ($query) {
-            return str_contains(strtolower($product['name']), $query) ||
-                   str_contains(strtolower($product['category']), $query) ||
-                   str_contains(strtolower($product['description']), $query);
-        })->values();
-
-        return response()->json($results);
-    }
-
+    // Página principal
     public function index()
     {
-        // Usar a propriedade $products ao invés de redeclarar
         $products = $this->products;
-
-        // Dados mocados de depoimentos
         $faker = Faker::create();
-        
-        // Gerar 10 depoimentos com Lorem Ipsum
+
+        // Depoimentos simulados
         $testimonials = [];
-        
         for ($i = 0; $i < 10; $i++) {
+            $name = $faker->name;
             $testimonials[] = [
-                'name' => $faker->name,
+                'name' => $name,
                 'comment' => $faker->paragraph(2),
                 'rating' => $faker->randomFloat(1, 3.0, 5.0),
-                'image' => 'https://ui-avatars.com/api/?name=' . urlencode($faker->name) . '&background=random&color=fff&size=60',
+                'image' => 'https://ui-avatars.com/api/?name=' . urlencode($name) . '&background=random&color=fff&size=60',
             ];
         }
 
+        // Artigos simulados
         $articles = [];
         $articleImages = [
             'desk.jpg',
@@ -116,7 +100,7 @@ class HomeController extends Controller
             'furniture.jpg',
             'decor.jpg'
         ];
-        
+
         for ($i = 0; $i < 4; $i++) {
             $authorName = $faker->name;
             $articles[] = [
@@ -134,6 +118,23 @@ class HomeController extends Controller
         }
 
         return view('home', compact('products', 'testimonials', 'articles'));
+    }
 
+    // Busca com filtro por palavra-chave
+    public function search(Request $request)
+    {
+        $query = strtolower($request->get('q', ''));
+
+        if (empty($query)) {
+            return response()->json([]);
+        }
+
+        $results = collect($this->products)->filter(function ($product) use ($query) {
+            return str_contains(strtolower($product['name']), $query) ||
+                   str_contains(strtolower($product['category']), $query) ||
+                   str_contains(strtolower($product['description']), $query);
+        })->values();
+
+        return response()->json($results);
     }
 }

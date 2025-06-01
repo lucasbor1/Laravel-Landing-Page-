@@ -1,11 +1,12 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('searchInput');
     const searchResults = document.getElementById('searchResults');
-    
+
     if (!searchInput || !searchResults) return;
 
     let timeoutId;
 
+    // Função para formatar preço em USD
     const formatPrice = (price) => {
         return new Intl.NumberFormat('en-US', {
             style: 'currency',
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }).format(price);
     };
 
+    // Renderiza os produtos retornados da busca
     const renderResults = (products) => {
         if (products.length === 0) {
             searchResults.innerHTML = `
@@ -40,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             `).join('');
 
+           
             const searchItems = searchResults.querySelectorAll('.search-item');
             searchItems.forEach(item => {
                 item.addEventListener('mouseenter', () => {
@@ -52,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    // Faz a busca com atraso (debounce)
     const performSearch = (query) => {
         if (query.length < 2) {
             searchResults.classList.add('d-none');
@@ -81,20 +85,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
             });
     };
-    
+
+   
     searchInput.addEventListener('input', (e) => {
         clearTimeout(timeoutId);
         timeoutId = setTimeout(() => {
             performSearch(e.target.value.trim());
-        }, 300); 
+        }, 300);
     });
 
+    // Oculta a caixa de resultados se clicar fora
     document.addEventListener('click', (e) => {
         if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
             searchResults.classList.add('d-none');
         }
     });
 
+    // Mostra resultados se tiver texto ao focar no campo
     searchInput.addEventListener('focus', () => {
         if (searchInput.value.trim().length >= 2) {
             searchResults.classList.remove('d-none');
