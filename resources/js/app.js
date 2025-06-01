@@ -2,6 +2,15 @@
 import './bootstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './search';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+document.addEventListener('DOMContentLoaded', () => {
+    AOS.init({
+      duration: 1000, // duração da animação
+      once: true      // anima apenas na primeira vez
+    });
+  });
 
 document.addEventListener('DOMContentLoaded', function () {
     // Função genérica para inicializar carrossel
