@@ -5,12 +5,14 @@
       <img src="{{ asset('images/Icone.png') }}" alt="Logo" width="30" height="30" class="me-2">
       Lalasia
     </a>
+        
+<button class="navbar-toggler position-absolute start-50 translate-middle-x" type="button"
+data-bs-toggle="collapse" data-bs-target="#navbarNav"
+aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+style="z-index: 1001;">
+<span class="navbar-toggler-icon"></span>
+</button>
 
-    <!-- Toggler para mobile -->
-    <button class="navbar-toggler position-relative" style="z-index: 1001;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
     <!-- Itens centralizados -->
     <div class="collapse navbar-collapse justify-content-center position-absolute start-0 end-0" id="navbarNav">
