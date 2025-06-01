@@ -2,22 +2,23 @@
     <div class="testimonial-card">
 
         <div class="quote-icone mb-4">
-            <img src="{{ asset('images/quote-up.png') }}" alt="Quote" class="quote-image">
+            <img src="{{ asset('images/quote-up.png') }}" alt="Quote" class="quote-image" loading="lazy" width="32"
+                height="32">
         </div>
 
         <p class="testimonial-text mb-4">{{ $testimonial['comment'] }}</p>
 
         <div class="testimonial-author d-flex align-items-center">
-            <img src="{{ asset($testimonial['image']) }}"
-                 alt="{{ $testimonial['name'] }}"
-                 class="testimonial-avatar">
+
+            <img src="{{ asset($testimonial['image']) }}" alt="{{ $testimonial['name'] }}" class="testimonial-avatar"
+                loading="lazy" width="60" height="60">
 
             <div class="ms-3">
                 <h5 class="testimonial-name mb-1">{{ $testimonial['name'] }}</h5>
 
                 <div class="testimonial-rating">
-                    @for($i = 0; $i < 5; $i++)
-                        @if($i < floor($testimonial['rating']))
+                    @for ($i = 0; $i < 5; $i++)
+                        @if ($i < floor($testimonial['rating']))
                             <i class="bi bi-star-fill"></i>
                         @else
                             <i class="bi bi-star"></i>

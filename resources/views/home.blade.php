@@ -4,7 +4,7 @@
 
 <section class="center-section d-flex flex-column align-items-center position-relative" data-aos="fade-down">
     <div class="container d-flex align-items-center justify-content-center position-relative" style="max-width: 900px;">
-        <img src="{{ asset('images/seta.png') }}" alt="Arrow" class="arrow-indicator position-absolute" data-aos="fade-up" data-aos-delay="200">
+        <img src="{{ asset('images/seta.png') }}" alt="Arrow" class="arrow-indicator position-absolute" data-aos="fade-up" data-aos-delay="200" loading="lazy">
         <div class="text-and-search text-center mx-auto" style="max-width: 600px; position: relative; z-index: 2;">
             <h1 class="center-title fw-bold mb-3" data-aos="fade-right">
                 Discover Furniture With<br>High Quality Wood ✨
@@ -25,7 +25,7 @@
         </div>
     </div>
     <div class="main-image-container w-100 position-relative" style="margin-top: -30px; z-index: 1;" data-aos="fade-up" data-aos-delay="300">
-        <img src="{{ asset('images/center.png') }}" alt="High Quality Furniture" class="center-image img-fluid rounded">
+        <img src="{{ asset('images/center.png') }}" alt="High Quality Furniture" class="center-image img-fluid rounded" fetchpriority="high">
     </div>
 </section>
 
@@ -45,7 +45,7 @@
             @foreach(['Choices', 'Time', 'Price'] as $index => $type)
                 <div class="col-md-4" data-aos="zoom-in" data-aos-delay="{{ $delays[$index] }}">
                     <div class="benefit-item text-center">
-                        <img src="{{ asset('images/' . $type . '.png') }}" alt="{{ $type }}" class="benefit-icon mb-4">
+                        <img src="{{ asset('images/' . $type . '.png') }}" alt="{{ $type }}" class="benefit-icon mb-4" loading="lazy">
                         <h3 class="benefit-title">{{ str_replace('_', ' ', $type) }}</h3>
                         <p class="benefit-text">Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non.</p>
                     </div>
@@ -87,7 +87,7 @@
                 <p class="section-description mb-4">Pellentesque etiam blandit in tincidunt at donec...</p>
                 <button class="btn btn-learn-more mb-4">Learn More</button>
                 <div class="wood-image-container" data-aos="zoom-in">
-                    <img src="{{ asset('images/madeira.png') }}" alt="madeira" class="wood-image">
+                    <img src="{{ asset('images/madeira.png') }}" alt="madeira" class="wood-image" loading="lazy">
                 </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left">
@@ -100,7 +100,7 @@
                     @endforeach
                 </div>
                 <div class="living-room-container" data-aos="zoom-in-up">
-                    <img src="{{ asset('images/living-room.jpg') }}" alt="Móvel" class="living-room-image">
+                    <img src="{{ asset('images/living-room.jpg') }}" alt="Móvel" class="living-room-image" loading="lazy">
                 </div>
             </div>
         </div>
@@ -142,7 +142,7 @@
                         @if($article['featured'] ?? false)
                             <div class="featured-article" data-aos="zoom-in-up" data-aos-delay="{{ $loop->index * 100 }}">
                                 <div class="article-image-container">
-                                    <img src="{{ asset($article['image']) }}" alt="{{ $article['title'] }}" class="article-image">
+                                    <img src="{{ asset($article['image']) }}" alt="{{ $article['title'] }}" class="article-image" loading="lazy">
                                     <div class="article-overlay">
                                         <div class="article-category">{{ $article['category'] }}</div>
                                         <h3 class="article-title">{{ $article['title'] }}</h3>
@@ -164,14 +164,14 @@
                     @unless($article['featured'] ?? false)
                         <article class="small-article" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
                             <div class="article-image-container">
-                                <img src="{{ asset($article['image']) }}" alt="{{ $article['title'] }}">
+                                <img src="{{ asset($article['image']) }}" alt="{{ $article['title'] }}" loading="lazy">
                             </div>
                             <div class="article-content">
                                 <span class="article-category">{{ $article['category'] }}</span>
                                 <h3 class="article-title">{{ $article['title'] }}</h3>
                                 <p class="article-description">{{ $article['description'] }}</p>
                                 <div class="article-author">
-                                    <img src="{{ asset($article['author']['avatar']) }}" alt="{{ $article['author']['name'] }}">
+                                    <img src="{{ asset($article['author']['avatar']) }}" alt="{{ $article['author']['name'] }}" loading="lazy">
                                     <div class="author-info">
                                         <span class="author-name">By {{ $article['author']['name'] }}</span>
                                         <span class="article-date">{{ $article['author']['date'] }}</span>
