@@ -19,13 +19,23 @@
                 Quam tincidunt aliquam adipiscing tempor.
             </p>
            
-            <div class="search-box mb-0">
+            <div class="search-box mb-0 position-relative">
                 <div class="input-group">
                     <span class="input-group-text bg-white border-end-0">
                         <i class="bi bi-search"></i>
                     </span>
-                    <input type="text" class="form-control border-start-0" placeholder="Search property" aria-label="Search property">
-                    <button class="btn btn-search" type="button">Search</button>
+                    <input
+                        type="text"
+                        id="searchInput"
+                        class="form-control border-start-0"
+                        placeholder="Search for furniture, decoration..."
+                        aria-label="Search products"
+                        autocomplete="off"
+                    >
+                    <button class="btn btn-search" type="button">Buscar</button>
+                </div>
+                <!-- Container para resultados da busca -->
+                <div id="searchResults" class="position-absolute w-100 bg-white shadow-lg rounded-3 mt-1 d-none" style="z-index: 1000; max-height: 400px; overflow-y: auto;">
                 </div>
             </div>
         </div>

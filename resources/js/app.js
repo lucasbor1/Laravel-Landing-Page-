@@ -1,6 +1,7 @@
 // app.js
 import './bootstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import './search';
 
 document.addEventListener('DOMContentLoaded', function () {
     // Função genérica para inicializar carrossel
