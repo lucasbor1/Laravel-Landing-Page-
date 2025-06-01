@@ -13,6 +13,10 @@ body {
   vertical-align: middle;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* ==================== NAVBAR ==================== */
 .navbar {
   position: relative;

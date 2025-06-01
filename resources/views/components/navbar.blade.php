@@ -5,7 +5,7 @@
       <img src="{{ asset('images/Icone.png') }}" alt="Logo" width="30" height="30" class="me-2">
       Lalasia
     </a>
-        
+
 <button class="navbar-toggler position-absolute start-50 translate-middle-x" type="button"
 data-bs-toggle="collapse" data-bs-target="#navbarNav"
 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
@@ -18,16 +18,16 @@ style="z-index: 1001;">
     <div class="collapse navbar-collapse justify-content-center position-absolute start-0 end-0" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-dark" href="#">Product</a>
+          <a class="nav-link text-dark" href="#products">Product</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="#">Services</a>
+          <a class="nav-link text-dark" href="#services">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="#">Article</a>
+          <a class="nav-link text-dark" href="#article">Article</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="#">About Us</a>
+          <a class="nav-link text-dark" href="#footer">About Us</a>
         </li>
       </ul>
     </div>

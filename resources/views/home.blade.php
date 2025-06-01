@@ -88,7 +88,7 @@
 </section>
 
 <!-- Products Section -->
-<section class="products py-5">
+<section class="products py-5" id="products">
     <div class="container products-container">
         <!-- Products header -->
         <div class="section-header text-center mb-5">
@@ -121,7 +121,7 @@
 </section>
 
 <!-- Our Product Section -->
-<section class="our-product py-5">
+<section class="our-product py-5" id="our-product">
     <div class="container products-container">
         <div class="row">
             <div class="col-lg-6">
@@ -162,7 +162,7 @@
 </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials py-5">
+    <section class="testimonials py-5" id="services">
         <div class="container testimonials-container">
             <!-- Testimonials header -->
             <div class="section-header text-center mb-5">
@@ -193,7 +193,7 @@
     </section>
 
  <!-- Articles Section -->
-<section class="articles py-5">
+<section class="articles py-5" id="article">
     <div class="container articles-container">
         <div class="articles-header">
             <span class="articles-label">Articles</span>

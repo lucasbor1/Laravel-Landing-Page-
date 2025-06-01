@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="footer">
+<footer class="footer" id="footer">
     <!-- Top Section -->
     <div class="footer-top">
         <div class="container" style="max-width: 1520px">
