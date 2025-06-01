@@ -5,7 +5,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializa AOS (Animações ao rolar a página)
     AOS.init({
         duration: 1000,
         once: true
@@ -67,8 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             track.style.transform = `translateX(${currentPosition}px)`;
         });
     }
-
-    // Inicializa carrosséis (produtos, depoimentos e artigos)
+ 
     initializeCarousel('carouselTrack', 'carouselNext', 'carouselPrev', {
         itemSelector: '.product-carousel-item',
         gapSize: 24
