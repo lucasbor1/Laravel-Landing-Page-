@@ -12,6 +12,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('testimonialTrack');
+    const items = track.querySelectorAll('.testimonial-carousel-item');
+    let currentPosition = 0;
+    const gap = 32;
+    const itemWidth = items[0].offsetWidth + gap;
+
+    setInterval(() => {
+        currentPosition -= itemWidth;
+
+        if (Math.abs(currentPosition) >= track.scrollWidth - track.parentElement.offsetWidth) {
+            currentPosition = 0;
+        }
+
+        track.style.transform = `translateX(${currentPosition}px)`;
+    }, 3000); // muda a cada 4 segundos
+});
+
+
 document.addEventListener('DOMContentLoaded', function () {
     // Função genérica para inicializar carrossel
     function initializeCarousel(trackId, nextId, prevId, options = {}) {
