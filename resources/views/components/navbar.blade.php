@@ -15,17 +15,17 @@
     <!-- Itens centralizados -->
     <div class="collapse navbar-collapse justify-content-center position-absolute start-0 end-0" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item mx-2">
-          <a class="nav-link text-dark fw-semibold" href="#">Product</a>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#">Product</a>
         </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link text-dark fw-semibold" href="#">Services</a>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#">Services</a>
         </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link text-dark fw-semibold" href="#">Article</a>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#">Article</a>
         </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link text-dark fw-semibold" href="#">About Us</a>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#">About Us</a>
         </li>
       </ul>
     </div>

@@ -15,47 +15,76 @@ body {
 
 /* ==================== NAVBAR ==================== */
 .navbar {
-    position: relative;
-  }
-  
-  .navbar .container {
-    position: static;
-  }
-  
+  position: relative;
+}
+
+/* Mantém o container estático */
+.navbar .container {
+  position: static;
+}
+
+/* Estilo do menu colapsado */
+.navbar-collapse {
+  background-color: white;
+  z-index: 1000;
+  border-top: 2px solid #518581; /* Separação superior */
+  padding-top: 1rem; /* Espaço entre o menu e os itens */
+}
+
+/* Estilos gerais da navegação */
+.navbar-nav {
+  padding: 0;
+}
+
+/* Links do menu */
+.navbar-nav .nav-link {
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+  padding: 0.5rem 1rem;
+  border-radius: 5px; /* Arredondamento leve */
+}
+
+/* Efeito hover refinado */
+.navbar-nav .nav-link:hover {
+  background-color: #518581;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 991.98px) {
   .navbar-collapse {
-    background-color: white;
-    z-index: 1000;
-  }
-  
-  .navbar-nav {
-    padding: 0;
-  }
-  
-  .navbar-nav .nav-link {
-    font-weight: 600;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-    padding: 0.5rem 1rem;
-  }
-  
-  .navbar-nav .nav-link:hover {
-    color: #518581;
-  }
-  
-  @media (max-width: 991.98px) {
-    .navbar-collapse {
       position: absolute;
       top: 100%;
       left: 0;
       right: 0;
       padding: 1rem;
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    }
-  
-    .navbar-nav {
-      text-align: center;
-    }
+      border-radius: 0 0 10px 10px; 
   }
+
+  .navbar-nav {
+      text-align: center;
+  }
+
+  
+  .navbar-nav .nav-item {
+      border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+      padding-bottom: 0.3rem;
+  }
+
+  /* Remove a borda do último item */
+  .navbar-nav .nav-item:last-child {
+      border-bottom: none;
+  }
+
+  /* Adiciona um efeito visual no hover */
+  .navbar-nav .nav-link:hover {
+      background-color: #518581;
+      color: white;
+  }
+}
+
 
 /* ==================== HERO SECTION ==================== */
 .center-section {
