@@ -1,50 +1,64 @@
-<footer class="bg-dark text-white py-5">
-    <div class="container">
+<!-- Footer -->
+<footer class="footer">
+    <!-- Top Section -->
+    <div class="footer-top">
+        <div class="container" style="max-width: 1520px">
+            <div class="footer-cta">
+                <h2 class="footer-cta-title">Join with me to get special discount</h2>
+                <a href="#" class="btn btn-learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+  <!-- Bottom Section -->
+<div class="footer-bottom">
+    <div class="container" style="max-width: 1520px">
         <div class="row">
-            <div class="col-lg-4 mb-4">
-                <h3>Lalasia</h3>
-                <p>Lalasia is digital agency that help you make better experience iaculis cras in.</p>
-                <div class="mt-3">
-                    <span class="me-2">Rating:</span>
-                    <span class="text-warning">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-half"></i>
-                    </span>
-                    <span class="ms-2">3.5</span>
+            <!-- Brand Column -->
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <img src="{{ asset('images/Icone.png') }}" alt="Lalasia" class="logo-img">
+                        <span class="logo-text">Lalasia</span>
+                    </a>
+                    <p class="footer-description">
+                        Lalasia is digital agency that help you make better experience iaculis cras in.
+                    </p>
                 </div>
             </div>
-            
-            <div class="col-lg-2 col-md-4 mb-4">
-                <h5>Product</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">New Arrivals</a></li>
-                    <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Best Selling</a></li>
-                    <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Home Decor</a></li>
-                    <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Kitchen Set</a></li>
+
+            <!-- Product Links -->
+            <div class="col-lg-3 col-md-4 mb-4 mb-md-0 offset-lg-1">
+                <h3 class="footer-title">Product</h3>
+                <ul class="footer-links">
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Best Selling</a></li>
+                    <li><a href="#">Home Decor</a></li>
+                    <li><a href="#">Kitchen Set</a></li>
                 </ul>
             </div>
-            
-            <div class="col-lg-2 col-md-4 mb-4">
-                <h5>Services</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Catalog</a></li>
-                    <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Blog</a></li>
-                    <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">FAQ</a></li>
-                    <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Pricing</a></li>
+
+            <!-- Services Links -->
+            <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                <h3 class="footer-title">Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Catalog</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">FaQ</a></li>
+                    <li><a href="#">Pricing</a></li>
                 </ul>
             </div>
-            
-            <div class="col-lg-2 col-md-4 mb-4">
-                <h5>Follow Us</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Facebook</a></li>
-                    <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Instagram</a></li>
-                    <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Twitter</a></li>
+
+            <!-- Follow Us Links -->
+            <div class="col-lg-1 col-md-4">
+                <h3 class="footer-title">Follow Us</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
                 </ul>
             </div>
         </div>
     </div>
+</div>
 </footer>

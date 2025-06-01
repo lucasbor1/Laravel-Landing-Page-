@@ -795,12 +795,15 @@ body {
   border-radius: 0.25rem;
   font-size: 1rem;
   margin-bottom: 2rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
 }
 
-.btn-learn-more:hover {
-  background-color: #426c68;
-  color: white;
-}
+/* Removed duplicate definition */
 
 /* Imagem da madeira */
 .wood-image-container {
@@ -1184,5 +1187,131 @@ body {
 
   .article-overlay {
       padding: 1.5rem;
+  }
+}
+
+/* Footer Styles */
+.footer {
+  background-color: white;
+}
+
+/* Top Section */
+.footer-top {
+   border-bottom: 1px solid #E7E7E7;
+}
+
+.footer-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+/* Removed duplicate definition */
+}
+
+.btn-learn-more:hover {
+  background-color: #426c68;
+  color: white;
+}
+
+.btn-learn-more i {
+  font-size: 1.25rem;
+}
+
+/* Bottom Section */
+.footer-bottom {
+  padding: 4rem 0;
+}
+
+.footer-brand {
+  margin-bottom: 2rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+}
+
+.logo-img {
+  height: 32px;
+  width: auto;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #151411;
+}
+
+.footer-description {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+.footer-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #151411;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 1rem;
+}
+
+.footer-links a:hover {
+  color: #518581;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .footer-cta {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .footer-cta-title {
+      font-size: 3rem;
+  }
+
+  .footer-description {
+      max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-top {
+      padding: 3rem 0;
+  }
+
+  .footer-bottom {
+      padding: 3rem 0;
+  }
+
+  .footer-cta-title {
+      font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-cta-title {
+      font-size: 1.5rem;
   }
 }
