@@ -6,21 +6,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let timeoutId;
 
-    // Função para formatar preço
     const formatPrice = (price) => {
-        return new Intl.NumberFormat('pt-BR', {
+        return new Intl.NumberFormat('en-US', {
             style: 'currency',
-            currency: 'BRL'
+            currency: 'USD'
         }).format(price);
     };
 
-    // Função para renderizar resultados
     const renderResults = (products) => {
         if (products.length === 0) {
             searchResults.innerHTML = `
                 <div class="p-3 text-center text-muted">
                     <i class="bi bi-search mb-2 fs-4"></i>
-                    <p class="mb-0">Nenhum produto encontrado</p>
+                    <p class="mb-0">No products found</p>
                 </div>
             `;
         } else {
@@ -42,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             `).join('');
 
-            // Adicionar hover effect
             const searchItems = searchResults.querySelectorAll('.search-item');
             searchItems.forEach(item => {
                 item.addEventListener('mouseenter', () => {
@@ -55,55 +52,49 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Função para fazer a busca
     const performSearch = (query) => {
         if (query.length < 2) {
             searchResults.classList.add('d-none');
             return;
         }
 
-        // Mostrar loading
         searchResults.classList.remove('d-none');
         searchResults.innerHTML = `
             <div class="p-3 text-center">
                 <div class="spinner-border spinner-border-sm text-primary" role="status">
-                    <span class="visually-hidden">Carregando...</span>
+                    <span class="visually-hidden">Loading...</span>
                 </div>
             </div>
         `;
 
-        // Fazer requisição AJAX
         axios.get(`/search?q=${encodeURIComponent(query)}`)
             .then(response => {
                 renderResults(response.data);
             })
             .catch(error => {
-                console.error('Erro na busca:', error);
+                console.error('Search error:', error);
                 searchResults.innerHTML = `
                     <div class="p-3 text-center text-danger">
                         <i class="bi bi-exclamation-circle mb-2 fs-4"></i>
-                        <p class="mb-0">Erro ao buscar produtos</p>
+                        <p class="mb-0">Error fetching products</p>
                     </div>
                 `;
             });
     };
-
-    // Event listener para input com debounce
+    
     searchInput.addEventListener('input', (e) => {
         clearTimeout(timeoutId);
         timeoutId = setTimeout(() => {
             performSearch(e.target.value.trim());
-        }, 300); // Aguarda 300ms após o usuário parar de digitar
+        }, 300); 
     });
 
-    // Fechar resultados ao clicar fora
     document.addEventListener('click', (e) => {
         if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
             searchResults.classList.add('d-none');
         }
     });
 
-    // Abrir resultados ao focar no input
     searchInput.addEventListener('focus', () => {
         if (searchInput.value.trim().length >= 2) {
             searchResults.classList.remove('d-none');

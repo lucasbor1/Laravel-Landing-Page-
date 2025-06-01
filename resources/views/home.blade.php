@@ -32,7 +32,7 @@
                         aria-label="Search products"
                         autocomplete="off"
                     >
-                    <button class="btn btn-search" type="button">Buscar</button>
+                    <button class="btn btn-search" type="button">Search</button>
                 </div>
                 <!-- Container para resultados da busca -->
                 <div id="searchResults" class="position-absolute w-100 bg-white shadow-lg rounded-3 mt-1 d-none" style="z-index: 1000; max-height: 400px; overflow-y: auto;">
