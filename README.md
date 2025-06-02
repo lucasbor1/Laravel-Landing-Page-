@@ -51,29 +51,62 @@ Antes de executar o projeto, certifique-se de ter instalado:
 
 ## ⚙️ Como Executar Localmente
 
+### 1. Clone o projeto
+
 ```bash
-# 1. Clone o projeto
-git clone https://github.com/lucasbor1/Laravel-Landing-Page-.git
+git clone https://github.com/lucasbor1/laravel-landing-page-.git
+```
 
-# 2. Acesse o diretório
-cd Laravel-Landing-Page-
+### 2. Acesse o diretório do projeto
 
-# 3. Copie o arquivo .env de exemplo
-cp .env.example .env
+```bash
+cd laravel-landing-page-
+```
 
-# 4. Gere a chave da aplicação
-php artisan key:generate
+### 3. Instale as dependências do Laravel (backend)
 
-# 5. Instale as dependências do Laravel
+```bash
 composer install
+```
 
-# 6. Instale as dependências do frontend (JS/CSS)
+### 4. Instale as dependências do frontend (Vite, Bootstrap, etc.)
+
+```bash
 npm install
+```
 
-# 7. Compile os assets com Vite
+### 5. Copie o arquivo `.env` de exemplo
+
+```bash
+cp .env.example .env
+```
+
+### 6. Gere a chave da aplicação
+
+```bash
+php artisan key:generate
+```
+
+### 7. Execute as migrations para criar as tabelas (ex: sessions)
+
+```bash
+php artisan migrate
+```
+
+### 8. Compile os assets do frontend
+
+```bash
 npm run dev
+```
 
-# 8. Inicie o servidor local
+### 9. Inicie o servidor local
+
+```bash
 php artisan serve
+```
 
-🖥️ Acesse em: http://localhost:8000
+---
+
+🖥️ Acesse o projeto no navegador:
+[http://localhost:8000](http://localhost:8000)
+
